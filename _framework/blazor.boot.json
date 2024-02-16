@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Chameleon.Client",
   "resources": {
-    "hash": "sha256-vPJZwU4GjUpCSvIMz/TiQRt2qFpAfDTcwYkeIkUa2c4=",
+    "hash": "sha256-hlPcPeFOdR+D0ptdXqZZX+DZj6LCqVzlhpr6excRfyk=",
     "jsModuleNative": {
       "dotnet.native.8.0.2.iy2a1km74r.js": "sha256-ergXSQ+YZ5Za3o5xOhbs1lUNyaFx2tYE5WdJLWmUKqA="
     },
@@ -18,8 +18,8 @@
     },
     "assembly": {
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
-      "Chameleon.Client.wasm": "sha256-aAsqvP1isNvQ5Ptt8Wx8dEsBhpXlXMzNV2hhjbKxhqY=",
-      "Chameleon.wasm": "sha256-XDYa7OhxXqojTN4UytALrhxofLkfFTmYsYV+RJU3B1s=",
+      "Chameleon.Client.wasm": "sha256-xfxUJgvM+SBrHTdtlsDwtg1nq2M1RAQEtIgkVpF+5SM=",
+      "Chameleon.wasm": "sha256-+qv3X9aCxOlFge8CHW3BfYrIshnHdkwoBaPLvcZYD4Y=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-VzjYMoSeqlwSC6xz7vg8Vu2VoeKN7gMVEBELhfJeitU=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-Tlyz0PnaQiHYr6RH66YCM3s0x1DQAnLhtnXKUwJSCxM=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-ufYK7mOm5dgoW5sVyvV0pT5QnTaZ+FVxoCJ3eaLELA8=",
