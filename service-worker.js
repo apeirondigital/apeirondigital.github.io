@@ -7,6 +7,7 @@ self.addEventListener('activate', event => event.waitUntil(onActivate(event)));
 self.addEventListener('fetch', event => event.respondWith(onFetch(event)));
 
 const cacheNamePrefix = 'offline-cache-';
+
 const cacheName = `${cacheNamePrefix}${self.assetsManifest.version}`;
 const offlineAssetsInclude = [ /\.dll$/, /\.pdb$/, /\.wasm/, /\.html/, /\.js$/, /\.json$/, /\.css$/, /\.woff$/, /\.png$/, /\.jpe?g$/, /\.gif$/, /\.ico$/, /\.blat$/, /\.dat$/ ];
 const offlineAssetsExclude = [ /^service-worker\.js$/ ];
@@ -21,9 +22,7 @@ async function onInstall(event) {
 
     // Fetch and cache all matching items from the assets manifest
     const assetsRequests = self.assetsManifest.assets
-        .filter(asset => offlineAssetsInclude.some(pattern => pattern.test(asset.url)))
-        .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)))
-        .map(asset => new Request(asset.url, { integrity: asset.hash, cache: 'no-cache' }));
+        .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)));
     await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
 }
 
@@ -40,29 +39,18 @@ async function onActivate(event) {
 async function onFetch(event) {
     let cachedResponse = null;
     if (event.request.method === 'GET') {
-        // For all navigation requests, try to serve index.html from cache,
-        // unless that request is for an offline resource.
-        // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
 
-        console.log("Manifest URLs:");
-        console.log(manifestUrlList);
+		const request = event.request;
+		const cache = await caches.open(cacheName);
+		cachedResponse = await cache.match(request);
+	}
 
-        console.log("Assets:");
-        console.log(assetsManifest);
-
-        console.log("Request:");
-        console.log(event.request);
-
-        const shouldServeIndexHtml = event.request.mode === 'navigate'
-            && !manifestUrlList.some(url => url === event.request.url);
-
-        console.log("Should serve index: " + shouldServeIndexHtml ? "YES" : "NO");
-
-        const request = shouldServeIndexHtml ? 'index.html' : event.request;
-        const cache = await caches.open(cacheName);
-        cachedResponse = await cache.match(request);
-    }
-
-    return cachedResponse || fetch(event.request);
-}
-/* Manifest version: 3lHeDQ9j */
+	if (cachedResponse != null) {
+		console.log("[Service worker: cached response] " + cachedResponse.url);
+		return cachedResponse;
+	}
+	else {
+		console.log("[Service worker: non cached response] " + event.request.url);
+		return fetch(event.request);
+	}
+}/* Manifest version: hSmFSK4h */
