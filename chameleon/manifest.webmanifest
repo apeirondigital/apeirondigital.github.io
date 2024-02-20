@@ -1,8 +1,8 @@
 {
   "name": "Operation Chameleon",
   "short_name": "Chameleon",
-  "id": "./",
-  "start_url": "./",
+  "id": "./chameleon",
+  "start_url": "./chameleon",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#03173d",
