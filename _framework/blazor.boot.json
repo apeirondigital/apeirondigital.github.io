@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PWA Testing",
   "resources": {
-    "hash": "sha256-fyRtJg0I18gon9DrTK6Gm5ZSrH1I4KyEzkduFB2g9ek=",
+    "hash": "sha256-wLgLB80djbb30+4WXMftykoQajd3ymwE8BXMtaRF4w8=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.zau0cl68fq.js": "sha256-0/zT4VaNGCA+pHb1kFPBvpg4SxIUr7P/pnheJknWyrQ="
     },
@@ -31,7 +31,7 @@
       "Microsoft.Extensions.Primitives.wasm": "sha256-6187ynEahDlSLMBvD4vAmiLpZ3clRb5xu6rM7O8AxNo=",
       "Microsoft.JSInterop.wasm": "sha256-y9e5FjTO/gq0d6pvl/cYf7uT232Y/Dw7ZS0YNZGBv/M=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-aCgxiIU+arbpOkgLngl1hBQLocrFL2/t1zUJV8HXOzI=",
-      "PWA Testing.wasm": "sha256-hSiX8lczoq6158R0EpvtBijOiD6V5d/bIzu0CnDxkUY=",
+      "PWA Testing.wasm": "sha256-JMc9Up+Yfm0kFoTYivx6DLYVQxEd4ObTuVXJVJKH3vU=",
       "System.Collections.Concurrent.wasm": "sha256-WYil6G7u5i3j1wcANUGHP/XCDXgnfb+YAxxftkc+cck=",
       "System.Collections.wasm": "sha256-wL1woMO/PTQk7qBov1SlmHungTuNuA4gJD0IoOtVK4Q=",
       "System.ComponentModel.wasm": "sha256-4HymY6byv/pcKBNmFJhh5Az0rHGEc9WelWTw3ASHvF0=",
